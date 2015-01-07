@@ -1,0 +1,503 @@
+nav {
+  text-align: left;
+  ul {
+    padding: 0;
+    li {
+      display: inline-block;
+      a {
+        border-radius: 5px;
+        color: #fff;
+        display: inline-block;
+        font-size: 0.95em;
+        padding: 0.5em 0.75em;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+
+        &:hover {
+          background: rgba(darken($violet-1, 10%), 0.5);
+        }
+
+        .icon {
+          color: inherit;
+          display: inline-block;
+          width: 0.9em;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+
+article {
+  @include column(1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 3em 0;
+
+  .spiel {
+    @include column(3/5);
+  }
+
+  #mc_embed_signup {
+    @include column(3/5);
+  }
+
+  .image {
+    @include column(2/5);
+    text-align: right;
+  }
+
+  h2.slogan {
+    color: darken($violet-1, 5%);
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+  }
+
+  &.banner {
+    background-color: lighten($violet-1, 25%);
+    background-image: url(../images/houses.jpg);
+    background-position: top;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+
+    p {
+      margin-top: 0.75em;
+      a {
+        color: darken($violet-1, 10%);
+        text-decoration: underline;
+      }
+    }
+
+    .logo {
+      margin-top: 12%;
+    }
+
+    h1 {
+      color: darken($violet-1, 15%);
+      font-weight: bold;
+      font-size: 5em;
+      margin-top: 0.15em;
+    }
+
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      height: 578px;
+    }
+
+    .more {
+      cursor: default;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5em;
+      text-align: center;
+
+      .icon {
+        animation: down 1.6s ease infinite;
+        background: rgba(#ffcd0f, 0.75);
+        border-radius: 50%;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+        padding: 0.35em 0.5em 0.3em 0.5em;
+        color: rgba(255,255,255,0.9);
+        cursor: pointer;
+        font-size: 1.25em;
+      }
+
+      span {
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        margin-bottom: 1.2em;
+      }
+    }
+  }
+
+  &.features {
+    padding: 0;
+    padding-top: 2em;
+  }
+
+  &.search,
+  &.chat,
+  &.notified {
+    background-color: $violet-1;
+    background-image: url(../images/search.jpg);
+    background-position: bottom;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.25);
+
+    h2, p, li, span, .icon {
+      color: #fff;
+    }
+
+    ul {
+      margin-top: 1em;
+      max-width: 480px;
+    }
+
+    li {
+      display: block;
+      position: relative;
+      @include column(1);
+
+      span {
+        &:nth-child(1){
+          @include column(1/6);
+        }
+        &:nth-child(2){
+          @include column(5/6);
+          line-height: 1.3;
+          font-size: 1.1em;
+          display: inline-block;
+          margin: 0.75em 0;
+          margin-left: 3.5em;
+        }
+      }
+
+      .icon {
+        display: inline-block;
+        border: #fff solid 2px;
+        height: 1.7em;
+        width: 1.7em;
+        box-sizing: border-box;
+        padding: 0.2em;
+        text-align: center;
+        border-radius: 40%;
+        font-size: 1.4em;
+        margin-right: 1em;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+
+  &.features {
+    .spiel {
+      @include column(1);
+    }
+  }
+
+  &.search {
+    background-attachment: fixed;
+    background-position: center;
+    padding-bottom: 3.5em;
+  }
+
+  &.chat {
+    background: none;
+    box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    h2, p, li, span, .icon {
+      color: #444;
+    }
+
+    li .icon {
+      border-color: #555;
+    }
+
+    h2 {
+      margin-top: 0.9em;
+    }
+
+    .image {
+      text-align: left;
+
+      .demo {
+        background-image: url(../images/chat.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        display: inline-block;
+        width: 85%;
+        height: 420px;
+        margin-bottom: -0.2em;
+        margin-top: -1.5em;
+      }
+    }
+  }
+
+  &.notified {
+    background-color: darken($violet-1, 10%);
+    background-image: url(../images/city.jpg);
+    background-position: bottom;
+    box-shadow: none;
+  }
+
+  &.subscribe {
+    text-align: center;
+
+    form.subscription {
+      border-color: rgba($violet-1, 0.25);
+    }
+
+    h1 {
+      display: inline-block;
+      margin-left: 0.2em;
+      font-size: 3em;
+      font-weight: bold;
+      position: relative;
+      bottom: 0.1em;
+    }
+
+    h2 {
+      color: #999;
+    }
+
+    nav {
+      text-align: center;
+      ul {
+        li {
+          a {
+            color: #666;
+            text-shadow: none;
+            &:hover {
+              background: none;
+              color: $violet-1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 1.25em;
+    line-height: 1.3;
+    max-width: 480px;
+  }
+
+  .feature-bit {
+    @include column(1/3);
+    padding: 2em 0;
+    position: relative;
+
+    &:hover {
+      .icon {
+        transform: scale(1.2);
+        transition: all .4s ease;
+      }
+    }
+
+    .icon {
+      color: $violet-1;
+      font-size: 4em;
+      margin-top: -0.15em;
+      transition: all .4s ease;
+    }
+    span {
+      color: darken($violet-1, 5%);
+      display: block;
+      width: 100%;
+      margin: auto;
+      font-size: 1.2em;
+      margin-top: 0.25em;
+      text-align: center;
+
+      &.number {
+        position: absolute;
+        font-size: 10em;
+        font-weight: bold;
+        color: #ebe5ed;
+        z-index: -1;
+        top: -0.175em;
+        left: -0.3em;
+      }
+    }
+  }
+
+  .content {
+    @include center();
+    padding: 0 2em;
+  }
+}
+
+form.subscription {
+  background: rgba(255,255,255,0.15);
+  border: rgba(255,255,255,0.25) solid 2px;
+  padding: 1.5em 1.75em 0 1.75em;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 1em 0;
+  width: 100%;
+  max-width: 360px;
+
+  strong {
+    display: block;
+    margin-bottom: 1em;
+  }
+
+  label {
+    color: darken($violet-1, 12%);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25em;
+    font-size: 1.25em;
+  }
+
+  .input-group {
+    background: #fff;
+    border-radius: 5px;
+    border: $violet-1 solid 1px;
+  }
+
+  input[type="email"] {
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 0.5em 0.75em;
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: inline-block;
+    width: 100%;
+    padding-right: 115px;
+    box-sizing: border-box;
+  }
+
+  button,
+  input[type="submit"] {
+    background: $violet-1;
+    border: none;
+    font-size: 1em;
+    padding: 0.525em 1em;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: #fff;
+    font-weight: 100;
+    outline: none;
+    letter-spacing: 1px;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: -2.3em;
+    transition: background .2s ease;
+
+    &:hover {
+      cursor: pointer;
+      background: lighten($violet-1, 5%);
+      transition: background .2s ease;
+    }
+  }
+}
+
+@keyframes down {
+    0% {
+    -webkit-transform: none;
+}
+50% {
+    -webkit-transform: translateY(8px);
+}
+100% {
+    -webkit-transform: none;
+}
+}
+
+@media (max-width: 768px){
+  article {
+    padding: 2em 0 !important;
+
+    &.features {
+      padding-bottom: 0 !important;
+    }
+    h2 {
+      margin: 0 !important;
+    }
+    .spiel,
+    #mc_embed_signup {
+      @include column(1);
+    }
+    .image {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 486px) {
+  body {
+    font-size: 14px;
+  }
+  article.banner {
+    .more .icon {
+      padding: 0.35em 0.55em 0.3em 0.55em;
+    }
+  }
+  form.subscription {
+    padding: 1.5em 1.75em 4.5em 1.75em;
+    width: 80%;
+    max-width: 999em;
+    text-align: center;
+
+    .input-group {
+      max-height: 2.3em;
+    }
+
+    input[type="email"] {
+      padding: 0.5em 0.75em;
+      text-align: center;
+    }
+
+    input[type="submit"] {
+      top: 0.5em;
+      border-radius: 5px;
+      padding: 0.65em 1em;
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  article.banner {
+    h1 {
+      font-size: 3em;
+      margin-top: 1.2em;
+    }
+  }
+  .logo {
+    .words {
+      font-size: 12px;
+    }
+
+    .symbol {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 240px) {
+  body {
+    font-size: 10px;
+  }
+  article.banner {
+    .content {
+      height: 320px;
+    }
+    .logo {
+      h2 {
+        display: none;
+      }
+      h1 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 0;
+      }
+    }
+  }
+}

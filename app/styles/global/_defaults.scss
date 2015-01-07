@@ -1,0 +1,113 @@
+$styled-typography: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-typography: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+* {
+  color: #333;
+  font-family: $body-typography;
+}
+
+.logo {
+  @include column(1);
+  margin-bottom: 1em;
+
+  .words {
+    @include column(2/3);
+    width: auto;
+  }
+
+  .symbol {
+    @include column(1/3);
+    background: $violet-1;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,0.15),
+      inset 0 0.6em 0.3em rgba(255,255,255,0.1);
+    border-radius: 40%;
+    display: inline-block;
+    padding: 0.1em 0.3em;
+    position: relative;
+    top: 0.25em;
+    font-size: 5em;
+    margin-right: 0.25em;
+    width: auto;
+
+    .back {
+      color: #fff;
+      position: relative;
+      top: 0.05em;
+      text-shadow: 0 0.05em 0.1em darken($violet-1, 5%);
+    }
+
+    .front {
+      color: $violet-1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 1.125em;
+      text-align: center;
+      font-size: 0.7em;
+    }
+  }
+}
+
+.symbol {
+  display: inline-block;
+  font-size: 4em;
+  position: relative;
+  top: 0.05em;
+
+  .back {
+    color: darken($violet-1, 10%);
+  }
+
+  .front {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 0.7em;
+    height: 1.3em;
+  }
+}
+
+html, body {
+  background: #fafafa;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.browsehappy {
+  background: #901e1a;
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  margin: 0;
+  padding: 1em;
+  position: fixed;
+  right: 0;
+
+  a {
+    color: #ff5f58
+  }
+}
+
+h1 {
+  color: darken($violet-1, 10%);
+  font-family: $styled-typography;
+  font-size: 4em;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+p {
+  line-height: 1.4;
+}
