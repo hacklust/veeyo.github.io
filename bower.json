@@ -1,0 +1,12 @@
+{
+  "name": "goveeyo",
+  "version": "0.1.0",
+  "homepage": "https://github.com/veeyo/veeyo.github.io",
+  "authors": [
+    "Joey Hipolito <hi@joeyhipolito.me>",
+    "Aaron De Leon <aaronnoeldeleon@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {}
+}
