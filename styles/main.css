@@ -1,0 +1,796 @@
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ *  Alias for edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+body {
+  margin: 0;
+  font-size: 16px; }
+
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  display: block; }
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: inherit; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  transition: .3s; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0; }
+
+* {
+  color: #333;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.logo {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 1%;
+  margin-bottom: 1em; }
+  .logo:before, .logo:after {
+    content: '';
+    display: table; }
+  .logo:after {
+    clear: both; }
+  .logo:last-child {
+    margin-right: 0%; }
+  .logo .words {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 66.33333%;
+    margin-left: 0%;
+    margin-right: 1%;
+    width: auto; }
+    .logo .words:before, .logo .words:after {
+      content: '';
+      display: table; }
+    .logo .words:after {
+      clear: both; }
+    .logo .words:last-child {
+      margin-right: 0%; }
+  .logo .symbol {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 32.66667%;
+    margin-left: 0%;
+    margin-right: 1%;
+    background: #5e3488;
+    box-shadow: 0 0.05em 0.1em rgba(0, 0, 0, 0.15), inset 0 0.6em 0.3em rgba(255, 255, 255, 0.1);
+    border-radius: 40%;
+    display: inline-block;
+    padding: 0.1em 0.3em;
+    position: relative;
+    top: 0.25em;
+    font-size: 5em;
+    margin-right: 0.25em;
+    width: auto; }
+    .logo .symbol:before, .logo .symbol:after {
+      content: '';
+      display: table; }
+    .logo .symbol:after {
+      clear: both; }
+    .logo .symbol:last-child {
+      margin-right: 0%; }
+    .logo .symbol .back {
+      color: #fff;
+      position: relative;
+      top: 0.05em;
+      text-shadow: 0 0.05em 0.1em #512d76; }
+    .logo .symbol .front {
+      color: #5e3488;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 1.125em;
+      text-align: center;
+      font-size: 0.7em; }
+
+.symbol {
+  display: inline-block;
+  font-size: 4em;
+  position: relative;
+  top: 0.05em; }
+  .symbol .back {
+    color: #442663; }
+  .symbol .front {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 0.7em;
+    height: 1.3em; }
+
+html, body {
+  background: #fafafa;
+  font-size: 16px;
+  margin: 0;
+  padding: 0; }
+
+.browsehappy {
+  background: #901e1a;
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  margin: 0;
+  padding: 1em;
+  position: fixed;
+  right: 0; }
+  .browsehappy a {
+    color: #ff5f58; }
+
+h1 {
+  color: #442663;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 4em;
+  font-weight: 100; }
+
+h2 {
+  font-size: 2em; }
+
+p {
+  line-height: 1.4; }
+
+nav {
+  text-align: left; }
+  nav ul {
+    padding: 0; }
+    nav ul li {
+      display: inline-block; }
+      nav ul li a {
+        border-radius: 5px;
+        color: #fff;
+        display: inline-block;
+        font-size: 0.95em;
+        padding: 0.5em 0.75em;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+        nav ul li a:hover {
+          background: rgba(68, 38, 99, 0.5); }
+        nav ul li a .icon {
+          color: inherit;
+          display: inline-block;
+          width: 0.9em;
+          text-align: center; }
+
+article {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 1%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 3em 0; }
+  article:before, article:after {
+    content: '';
+    display: table; }
+  article:after {
+    clear: both; }
+  article:last-child {
+    margin-right: 0%; }
+  article .spiel {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 59.6%;
+    margin-left: 0%;
+    margin-right: 1%; }
+    article .spiel:before, article .spiel:after {
+      content: '';
+      display: table; }
+    article .spiel:after {
+      clear: both; }
+    article .spiel:last-child {
+      margin-right: 0%; }
+  article #mc_embed_signup {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 59.6%;
+    margin-left: 0%;
+    margin-right: 1%; }
+    article #mc_embed_signup:before, article #mc_embed_signup:after {
+      content: '';
+      display: table; }
+    article #mc_embed_signup:after {
+      clear: both; }
+    article #mc_embed_signup:last-child {
+      margin-right: 0%; }
+  article .image {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 39.4%;
+    margin-left: 0%;
+    margin-right: 1%;
+    text-align: right; }
+    article .image:before, article .image:after {
+      content: '';
+      display: table; }
+    article .image:after {
+      clear: both; }
+    article .image:last-child {
+      margin-right: 0%; }
+  article h2.slogan {
+    color: #512d76;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    letter-spacing: 1px; }
+  article.banner {
+    background-color: #9e72c9;
+    background-image: url(../images/houses.jpg);
+    background-position: top;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden; }
+    article.banner p {
+      margin-top: 0.75em; }
+      article.banner p a {
+        color: #442663;
+        text-decoration: underline; }
+    article.banner .logo {
+      margin-top: 12%; }
+    article.banner h1 {
+      color: #381f51;
+      font-weight: bold;
+      font-size: 5em;
+      margin-top: 0.15em; }
+    article.banner .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      height: 578px; }
+    article.banner .more {
+      cursor: default;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5em;
+      text-align: center; }
+      article.banner .more .icon {
+        animation: down 1.6s ease infinite;
+        background: rgba(255, 205, 15, 0.75);
+        border-radius: 50%;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+        padding: 0.35em 0.5em 0.3em 0.5em;
+        color: rgba(255, 255, 255, 0.9);
+        cursor: pointer;
+        font-size: 1.25em; }
+      article.banner .more span {
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        margin-bottom: 1.2em; }
+  article.features {
+    padding: 0;
+    padding-top: 2em; }
+  article.search, article.chat, article.notified {
+    background-color: #5e3488;
+    background-image: url(../images/search.jpg);
+    background-position: bottom;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.25); }
+    article.search h2, article.search p, article.search li, article.search span, article.search .icon, article.chat h2, article.chat p, article.chat li, article.chat span, article.chat .icon, article.notified h2, article.notified p, article.notified li, article.notified span, article.notified .icon {
+      color: #fff; }
+    article.search ul, article.chat ul, article.notified ul {
+      margin-top: 1em;
+      max-width: 480px; }
+    article.search li, article.chat li, article.notified li {
+      display: block;
+      position: relative;
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 100%;
+      margin-left: 0%;
+      margin-right: 1%; }
+      article.search li:before, article.search li:after, article.chat li:before, article.chat li:after, article.notified li:before, article.notified li:after {
+        content: '';
+        display: table; }
+      article.search li:after, article.chat li:after, article.notified li:after {
+        clear: both; }
+      article.search li:last-child, article.chat li:last-child, article.notified li:last-child {
+        margin-right: 0%; }
+      article.search li span:nth-child(1), article.chat li span:nth-child(1), article.notified li span:nth-child(1) {
+        *zoom: 1;
+        float: left;
+        clear: none;
+        text-align: inherit;
+        width: 15.83333%;
+        margin-left: 0%;
+        margin-right: 1%; }
+        article.search li span:nth-child(1):before, article.search li span:nth-child(1):after, article.chat li span:nth-child(1):before, article.chat li span:nth-child(1):after, article.notified li span:nth-child(1):before, article.notified li span:nth-child(1):after {
+          content: '';
+          display: table; }
+        article.search li span:nth-child(1):after, article.chat li span:nth-child(1):after, article.notified li span:nth-child(1):after {
+          clear: both; }
+        article.search li span:nth-child(1):last-child, article.chat li span:nth-child(1):last-child, article.notified li span:nth-child(1):last-child {
+          margin-right: 0%; }
+      article.search li span:nth-child(2), article.chat li span:nth-child(2), article.notified li span:nth-child(2) {
+        *zoom: 1;
+        float: left;
+        clear: none;
+        text-align: inherit;
+        width: 83.16667%;
+        margin-left: 0%;
+        margin-right: 1%;
+        line-height: 1.3;
+        font-size: 1.1em;
+        display: inline-block;
+        margin: 0.75em 0;
+        margin-left: 3.5em; }
+        article.search li span:nth-child(2):before, article.search li span:nth-child(2):after, article.chat li span:nth-child(2):before, article.chat li span:nth-child(2):after, article.notified li span:nth-child(2):before, article.notified li span:nth-child(2):after {
+          content: '';
+          display: table; }
+        article.search li span:nth-child(2):after, article.chat li span:nth-child(2):after, article.notified li span:nth-child(2):after {
+          clear: both; }
+        article.search li span:nth-child(2):last-child, article.chat li span:nth-child(2):last-child, article.notified li span:nth-child(2):last-child {
+          margin-right: 0%; }
+      article.search li .icon, article.chat li .icon, article.notified li .icon {
+        display: inline-block;
+        border: #fff solid 2px;
+        height: 1.7em;
+        width: 1.7em;
+        box-sizing: border-box;
+        padding: 0.2em;
+        text-align: center;
+        border-radius: 40%;
+        font-size: 1.4em;
+        margin-right: 1em;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto; }
+  article.features .spiel {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 1%; }
+    article.features .spiel:before, article.features .spiel:after {
+      content: '';
+      display: table; }
+    article.features .spiel:after {
+      clear: both; }
+    article.features .spiel:last-child {
+      margin-right: 0%; }
+  article.search {
+    background-attachment: fixed;
+    background-position: center;
+    padding-bottom: 3.5em; }
+  article.chat {
+    background: none;
+    box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0; }
+    article.chat h2, article.chat p, article.chat li, article.chat span, article.chat .icon {
+      color: #444; }
+    article.chat li .icon {
+      border-color: #555; }
+    article.chat h2 {
+      margin-top: 0.9em; }
+    article.chat .image {
+      text-align: left; }
+      article.chat .image .demo {
+        background-image: url(../images/chat.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        display: inline-block;
+        width: 85%;
+        height: 420px;
+        margin-bottom: -0.2em;
+        margin-top: -1.5em; }
+  article.notified {
+    background-color: #442663;
+    background-image: url(../images/city.jpg);
+    background-position: bottom;
+    box-shadow: none; }
+  article.subscribe {
+    text-align: center; }
+    article.subscribe form.subscription {
+      border-color: rgba(94, 52, 136, 0.25); }
+    article.subscribe h1 {
+      display: inline-block;
+      margin-left: 0.2em;
+      font-size: 3em;
+      font-weight: bold;
+      position: relative;
+      bottom: 0.1em; }
+    article.subscribe h2 {
+      color: #999; }
+    article.subscribe nav {
+      text-align: center; }
+      article.subscribe nav ul li a {
+        color: #666;
+        text-shadow: none; }
+        article.subscribe nav ul li a:hover {
+          background: none;
+          color: #5e3488; }
+  article p {
+    font-size: 1.25em;
+    line-height: 1.3;
+    max-width: 480px; }
+  article .feature-bit {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 32.66667%;
+    margin-left: 0%;
+    margin-right: 1%;
+    padding: 2em 0;
+    position: relative; }
+    article .feature-bit:before, article .feature-bit:after {
+      content: '';
+      display: table; }
+    article .feature-bit:after {
+      clear: both; }
+    article .feature-bit:last-child {
+      margin-right: 0%; }
+    article .feature-bit:hover .icon {
+      transform: scale(1.2);
+      transition: all .4s ease; }
+    article .feature-bit .icon {
+      color: #5e3488;
+      font-size: 4em;
+      margin-top: -0.15em;
+      transition: all .4s ease; }
+    article .feature-bit span {
+      color: #512d76;
+      display: block;
+      width: 100%;
+      margin: auto;
+      font-size: 1.2em;
+      margin-top: 0.25em;
+      text-align: center; }
+      article .feature-bit span.number {
+        position: absolute;
+        font-size: 10em;
+        font-weight: bold;
+        color: #ebe5ed;
+        z-index: -1;
+        top: -0.175em;
+        left: -0.3em; }
+  article .content {
+    *zoom: 1;
+    width: auto;
+    max-width: 1024px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    padding: 0 2em; }
+    article .content:before, article .content:after {
+      content: '';
+      display: table; }
+    article .content:after {
+      clear: both; }
+
+form.subscription {
+  background: rgba(255, 255, 255, 0.15);
+  border: rgba(255, 255, 255, 0.25) solid 2px;
+  padding: 1.5em 1.75em 0 1.75em;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 1em 0;
+  width: 100%;
+  max-width: 360px; }
+  form.subscription strong {
+    display: block;
+    margin-bottom: 1em; }
+  form.subscription label {
+    color: #3f235c;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25em;
+    font-size: 1.25em; }
+  form.subscription .input-group {
+    background: #fff;
+    border-radius: 5px;
+    border: #5e3488 solid 1px; }
+  form.subscription input[type="email"] {
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 0.5em 0.75em;
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: inline-block;
+    width: 100%;
+    padding-right: 115px;
+    box-sizing: border-box; }
+  form.subscription button,
+  form.subscription input[type="submit"] {
+    background: #5e3488;
+    border: none;
+    font-size: 1em;
+    padding: 0.525em 1em;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: #fff;
+    font-weight: 100;
+    outline: none;
+    letter-spacing: 1px;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: -2.3em;
+    transition: background .2s ease; }
+    form.subscription button:hover,
+    form.subscription input[type="submit"]:hover {
+      cursor: pointer;
+      background: #6b3b9a;
+      transition: background .2s ease; }
+
+@keyframes down {
+  0% {
+    -webkit-transform: none; }
+  50% {
+    -webkit-transform: translateY(8px); }
+  100% {
+    -webkit-transform: none; } }
+@media (max-width: 768px) {
+  article {
+    padding: 2em 0 !important; }
+    article.features {
+      padding-bottom: 0 !important; }
+    article h2 {
+      margin: 0 !important; }
+    article .spiel,
+    article #mc_embed_signup {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 100%;
+      margin-left: 0%;
+      margin-right: 1%; }
+      article .spiel:before, article .spiel:after,
+      article #mc_embed_signup:before,
+      article #mc_embed_signup:after {
+        content: '';
+        display: table; }
+      article .spiel:after,
+      article #mc_embed_signup:after {
+        clear: both; }
+      article .spiel:last-child,
+      article #mc_embed_signup:last-child {
+        margin-right: 0%; }
+    article .image {
+      display: none; } }
+@media (max-width: 486px) {
+  body {
+    font-size: 14px; }
+
+  article.banner .more .icon {
+    padding: 0.35em 0.55em 0.3em 0.55em; }
+
+  form.subscription {
+    padding: 1.5em 1.75em 4.5em 1.75em;
+    width: 80%;
+    max-width: 999em;
+    text-align: center; }
+    form.subscription .input-group {
+      max-height: 2.3em; }
+    form.subscription input[type="email"] {
+      padding: 0.5em 0.75em;
+      text-align: center; }
+    form.subscription input[type="submit"] {
+      top: 0.5em;
+      border-radius: 5px;
+      padding: 0.65em 1em;
+      float: none;
+      width: 100%; } }
+@media (max-width: 420px) {
+  article.banner h1 {
+    font-size: 3em;
+    margin-top: 1.2em; }
+
+  .logo .words {
+    font-size: 12px; }
+  .logo .symbol {
+    display: none; } }
+@media (max-width: 240px) {
+  body {
+    font-size: 10px; }
+
+  article.banner .content {
+    height: 320px; }
+  article.banner .logo h2 {
+    display: none; }
+  article.banner .logo h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0; } }
+
+/*# sourceMappingURL=main.css.map */
