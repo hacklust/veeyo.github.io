@@ -5,7 +5,7 @@
     "Aaron De Leon <aaronnoeldeleon@gmail.com>"
   ],
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Veeyo app site",
   "devDependencies": {
     "grunt": "^0.4.5",
